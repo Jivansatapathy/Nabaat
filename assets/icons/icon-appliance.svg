@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#132E23" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Top Handle -->
+  <path d="M9 7V4.5C9 3.67 9.67 3 10.5 3h3C14.33 3 15 3.67 15 4.5V7" />
+  <!-- Protective Casing Body -->
+  <rect x="3.5" y="7" width="17" height="13" rx="2" />
+  <!-- Center Horizontal Seam -->
+  <line x1="3.5" y1="13.5" x2="20.5" y2="13.5" />
+  <!-- Center Precision Latch -->
+  <rect x="10.5" y="12" width="3" height="3" rx="0.6" fill="#132E23" />
+</svg>

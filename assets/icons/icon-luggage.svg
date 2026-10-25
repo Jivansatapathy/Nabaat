@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#132E23" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Telescopic Handle -->
+  <path d="M9 6V3.5C9 2.67 9.67 2 10.5 2h3C14.33 2 15 2.67 15 3.5V6" />
+  <!-- Main Luggage Body -->
+  <rect x="5.5" y="6" width="13" height="14" rx="2.5" />
+  <!-- Protective Vertical Ribs -->
+  <line x1="10" y1="9.5" x2="10" y2="16.5" />
+  <line x1="14" y1="9.5" x2="14" y2="16.5" />
+  <!-- Bottom Corner Rollers -->
+  <circle cx="8" cy="21.5" r="1" fill="#132E23" />
+  <circle cx="16" cy="21.5" r="1" fill="#132E23" />
+</svg>

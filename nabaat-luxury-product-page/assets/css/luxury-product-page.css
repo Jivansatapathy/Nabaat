@@ -1,0 +1,1039 @@
+/**
+ * NABAAT Store - Luxury D2C Product Page UX
+ * Pixel-perfect stylesheet matching high-converting direct-to-consumer aesthetics.
+ */
+
+:root {
+  --nabaat-dark: #0d2719;
+  --nabaat-dark-hover: #163f29;
+  --nabaat-gold: #f6c467;
+  --nabaat-gold-hover: #e5b252;
+  --nabaat-amber-tag: #926315;
+  --nabaat-emerald: #10b981;
+  --nabaat-text-main: #18181b;
+  --nabaat-text-muted: #52525b;
+  --nabaat-border: #e4e4e7;
+  --nabaat-bg-soft: #f8fafc;
+  --nabaat-font-heading: 'Playfair Display', Georgia, serif;
+  --nabaat-font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Base Wrapper */
+.nabaat-luxury-container {
+  width: 100%;
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 24px 20px 60px 20px;
+  box-sizing: border-box;
+}
+
+.nabaat-luxury-wrapper {
+  font-family: var(--nabaat-font-body);
+  color: var(--nabaat-text-main);
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+.nabaat-luxury-wrapper *,
+.nabaat-luxury-wrapper *::before,
+.nabaat-luxury-wrapper *::after {
+  box-sizing: inherit;
+}
+
+/* 2-Column Main Stage */
+.nabaat-luxury-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 52px;
+  align-items: start;
+}
+
+/* ==========================================================================
+   LEFT COLUMN: MEDIA & GALLERY
+   ========================================================================== */
+.nabaat-col-media {
+  position: sticky;
+  top: 30px;
+}
+
+.nabaat-gallery-stage {
+  position: relative;
+}
+
+/* Floating Status Badges */
+.nabaat-floating-badges {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.nabaat-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.nabaat-badge-dark {
+  background: rgba(13, 39, 25, 0.92);
+  color: #ffffff;
+}
+
+.nabaat-dot-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--nabaat-emerald);
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.4);
+  animation: nabaat-pulse 2s infinite;
+}
+
+@keyframes nabaat-pulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.nabaat-badge-gold {
+  background: rgba(146, 99, 21, 0.92);
+  color: #ffffff;
+}
+
+/* Main Image Box */
+.nabaat-main-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 0.88;
+  background: #f1f5f9;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px -10px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f1f5f9;
+  cursor: crosshair;
+}
+
+.nabaat-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease, opacity 0.25s ease;
+}
+
+/* Floating Image Overlay Controls */
+.nabaat-image-controls {
+  position: absolute;
+  bottom: 18px;
+  right: 18px;
+  display: flex;
+  gap: 8px;
+  z-index: 5;
+}
+
+.nabaat-ctrl-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  color: #27272a;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 9999px;
+  padding: 7px 15px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.nabaat-ctrl-btn:hover {
+  background: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  color: var(--nabaat-dark);
+}
+
+/* Thumbnail Gallery Grid */
+.nabaat-thumbs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.nabaat-thumb-item {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f1f5f9;
+  border: 2px solid transparent;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nabaat-thumb-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.2s ease;
+}
+
+.nabaat-thumb-item:hover {
+  border-color: #cbd5e1;
+}
+
+.nabaat-thumb-item.is-active {
+  border-color: var(--nabaat-dark);
+  box-shadow: 0 0 0 1px var(--nabaat-dark);
+}
+
+/* 4-Column Heritage Trust Strip */
+.nabaat-trust-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 24px;
+  padding: 18px 12px;
+  background: #f0fdf4;
+  border: 1px solid #dcfce7;
+  border-radius: 14px;
+}
+
+.nabaat-trust-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  padding: 0 4px;
+}
+
+.nabaat-trust-icon {
+  color: #059669;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nabaat-trust-text strong {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #064e3b;
+  line-height: 1.25;
+}
+
+.nabaat-trust-text span {
+  display: block;
+  font-size: 11px;
+  color: #047857;
+  margin-top: 2px;
+  line-height: 1.2;
+}
+
+/* ==========================================================================
+   RIGHT COLUMN: PRODUCT DETAILS & OPTIONS
+   ========================================================================== */
+.nabaat-col-details {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Category Eyebrow & Star Rating Row */
+.nabaat-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.nabaat-eyebrow-cat,
+.nabaat-eyebrow-cat a {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: #926315;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.nabaat-rating-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+}
+
+.nabaat-star-icon {
+  color: #eab308;
+  font-size: 15px;
+  line-height: 1;
+}
+
+.nabaat-rating-score {
+  font-weight: 700;
+  color: #18181b;
+}
+
+.nabaat-review-link {
+  color: #71717a;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-size: 12.5px;
+}
+
+/* Product Title */
+.nabaat-product-title {
+  font-family: var(--nabaat-font-heading);
+  font-size: 32px;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.2;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.3px;
+}
+
+/* Official Master SKU Badge */
+.nabaat-sku-badge-strip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 4px 10px;
+  margin: 0 0 16px 0;
+  width: fit-content;
+}
+
+.nabaat-sku-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.nabaat-sku-code {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--nabaat-dark);
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+}
+
+/* Short Lead Description */
+.nabaat-short-desc {
+  font-size: 14.5px;
+  color: var(--nabaat-text-muted);
+  line-height: 1.65;
+  margin: 0 0 22px 0;
+}
+
+/* Luxury Pricing Container */
+.nabaat-price-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 22px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  margin-bottom: 24px;
+}
+
+.nabaat-price-left {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.nabaat-price-hero {
+  display: inline-flex;
+  align-items: baseline;
+  font-weight: 800;
+  color: var(--nabaat-dark);
+  font-size: 34px;
+  line-height: 1;
+}
+
+.nabaat-currency-symbol {
+  font-size: 26px;
+  font-weight: 700;
+  margin-right: 2px;
+}
+
+.nabaat-price-mrp {
+  color: #94a3b8;
+  font-size: 17px;
+  text-decoration: line-through;
+  font-weight: 500;
+}
+
+.nabaat-discount-tag {
+  background: #fef3c7;
+  color: #b45309;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.3px;
+}
+
+.nabaat-price-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+}
+
+.nabaat-tax-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #16a34a;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.nabaat-express-badge {
+  color: #64748b;
+  font-size: 11.5px;
+}
+
+/* Option Groups (Colorways, Sizing) */
+.nabaat-option-group {
+  margin-bottom: 22px;
+}
+
+.nabaat-option-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 13.5px;
+}
+
+.nabaat-opt-title {
+  font-weight: 700;
+  color: #18181b;
+}
+
+.nabaat-opt-active-val {
+  color: #64748b;
+  font-weight: 500;
+  margin-left: 6px;
+}
+
+.nabaat-blueprint-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #926315;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nabaat-blueprint-link:hover {
+  text-decoration: underline;
+}
+
+/* Color Swatches */
+.nabaat-color-swatches {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nabaat-color-swatch {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid #e2e8f0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.nabaat-color-swatch:hover {
+  transform: scale(1.08);
+}
+
+.nabaat-color-swatch.is-selected {
+  border-color: var(--nabaat-dark);
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px var(--nabaat-dark);
+}
+
+.nabaat-swatch-check {
+  display: none;
+}
+
+.nabaat-color-swatch.is-selected .nabaat-swatch-check {
+  display: block;
+}
+
+/* Sizing Mode Tabs */
+.nabaat-mode-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  background: #f1f5f9;
+  padding: 4px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.nabaat-mode-tab {
+  background: transparent;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 7px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #64748b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.nabaat-mode-tab.is-active {
+  background: #ffffff;
+  color: #18181b;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.nabaat-badge-tailored {
+  background: #fef3c7;
+  color: #b45309;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Sizing Cards Grid */
+.nabaat-size-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.nabaat-size-card {
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px 14px;
+  background: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nabaat-size-card:hover {
+  border-color: #cbd5e1;
+}
+
+.nabaat-size-card.is-selected {
+  border-color: var(--nabaat-dark);
+  background: #f0fdf4;
+  box-shadow: 0 4px 12px rgba(13, 39, 25, 0.08);
+}
+
+.nabaat-size-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.nabaat-size-card-head strong {
+  font-size: 13px;
+  color: #18181b;
+  font-weight: 700;
+}
+
+.nabaat-card-radio {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1.5px solid #cbd5e1;
+  display: inline-block;
+  position: relative;
+}
+
+.nabaat-size-card.is-selected .nabaat-card-radio {
+  border-color: var(--nabaat-dark);
+  background: var(--nabaat-dark);
+  box-shadow: inset 0 0 0 2.5px #ffffff;
+}
+
+.nabaat-size-card-dims {
+  font-size: 11px;
+  color: #64748b;
+  margin-bottom: 6px;
+}
+
+.nabaat-size-card-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.nabaat-size-card-mrp {
+  font-size: 11px;
+  color: #94a3b8;
+  text-decoration: line-through;
+}
+
+.nabaat-size-card-price {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #18181b;
+}
+
+.nabaat-size-statement {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #475569;
+  line-height: 1.4;
+}
+
+/* Pincode Estimator Box */
+.nabaat-pincode-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.nabaat-pincode-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #334155;
+  margin-bottom: 10px;
+}
+
+.nabaat-pincode-input-row {
+  display: flex;
+  gap: 8px;
+}
+
+#nabaat-pincode-input {
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #18181b;
+  outline: none;
+  font-family: inherit;
+}
+
+#nabaat-pincode-input:focus {
+  border-color: var(--nabaat-dark);
+  box-shadow: 0 0 0 2px rgba(13, 39, 25, 0.1);
+}
+
+.nabaat-pin-btn {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nabaat-pin-btn:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+.nabaat-pincode-result {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #065f46;
+}
+
+/* Action Purchase Row */
+.nabaat-actions-row {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.nabaat-qty-box {
+  display: inline-flex;
+  align-items: center;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 52px;
+}
+
+.nabaat-qty-btn {
+  background: transparent;
+  border: none;
+  width: 40px;
+  height: 100%;
+  font-size: 18px;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.nabaat-qty-btn:hover {
+  background: #e2e8f0;
+}
+
+.nabaat-qty-num {
+  width: 44px;
+  border: none;
+  background: transparent;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  color: #18181b;
+  outline: none;
+  -moz-appearance: textfield;
+}
+
+.nabaat-qty-num::-webkit-outer-spin-button,
+.nabaat-qty-num::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Primary Add to Cart CTA */
+.nabaat-cta-cart {
+  flex: 1;
+  height: 52px;
+  background: var(--nabaat-dark);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 4px 14px rgba(13, 39, 25, 0.25);
+  transition: all 0.2s ease;
+  letter-spacing: 0.2px;
+}
+
+.nabaat-cta-cart:hover {
+  background: var(--nabaat-dark-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(13, 39, 25, 0.35);
+}
+
+/* Secondary Instant Buy Now CTA */
+.nabaat-cta-buynow {
+  width: 100%;
+  height: 50px;
+  background: var(--nabaat-gold);
+  color: #1c1917;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(246, 196, 103, 0.3);
+  transition: all 0.2s ease;
+  margin-bottom: 16px;
+}
+
+.nabaat-cta-buynow:hover {
+  background: var(--nabaat-gold-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(246, 196, 103, 0.45);
+}
+
+/* WhatsApp Consultation Bar */
+.nabaat-whatsapp-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ecfdf5;
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+  padding: 12px 16px;
+  color: #065f46;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  margin-bottom: 18px;
+}
+
+.nabaat-whatsapp-bar:hover {
+  background: #d1fae5;
+  border-color: #86efac;
+}
+
+.nabaat-wa-icon {
+  flex-shrink: 0;
+}
+
+/* Trust & Security Footer Row */
+.nabaat-security-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid #f1f5f9;
+  font-size: 12.5px;
+  color: #64748b;
+}
+
+.nabaat-sec-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ==========================================================================
+   BELOW-THE-FOLD LUXURY ACCORDION / TABS
+   ========================================================================== */
+.nabaat-below-fold-section {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.nabaat-accordion-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.nabaat-acc-item {
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background: #ffffff;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.nabaat-acc-item.is-open {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.nabaat-acc-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  color: #18181b;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+}
+
+.nabaat-acc-chevron {
+  transition: transform 0.25s ease;
+  color: #64748b;
+}
+
+.nabaat-acc-item.is-open .nabaat-acc-chevron {
+  transform: rotate(180deg);
+}
+
+.nabaat-acc-content {
+  display: none;
+  padding: 0 24px 24px 24px;
+  color: #475569;
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+.nabaat-acc-item.is-open .nabaat-acc-content {
+  display: block;
+}
+
+.nabaat-acc-list {
+  padding-left: 20px;
+  margin: 10px 0;
+}
+
+.nabaat-acc-list li {
+  margin-bottom: 8px;
+}
+
+/* Reviews Summary Box */
+.nabaat-reviews-summary {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.nabaat-score-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nabaat-big-score {
+  font-size: 42px;
+  font-weight: 800;
+  color: #18181b;
+  line-height: 1;
+}
+
+.nabaat-score-stars {
+  color: #eab308;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+/* ==========================================================================
+   MOBILE STICKY BOTTOM BAR
+   ========================================================================== */
+.nabaat-mobile-sticky-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  padding: 12px 18px;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+  z-index: 999;
+  align-items: center;
+  gap: 14px;
+}
+
+.nabaat-sticky-thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f1f5f9;
+  flex-shrink: 0;
+}
+
+.nabaat-sticky-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nabaat-sticky-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.nabaat-sticky-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #18181b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nabaat-sticky-price {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--nabaat-dark);
+}
+
+.nabaat-sticky-cta {
+  background: var(--nabaat-dark);
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 992px) {
+  .nabaat-luxury-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .nabaat-col-media {
+    position: static;
+  }
+
+  .nabaat-product-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nabaat-luxury-container {
+    padding: 16px 14px 90px 14px;
+  }
+
+  .nabaat-trust-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .nabaat-size-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nabaat-mobile-sticky-bar {
+    display: flex;
+  }
+}

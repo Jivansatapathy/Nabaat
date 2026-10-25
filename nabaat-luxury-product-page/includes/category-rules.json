@@ -1,0 +1,31 @@
+{
+  "_note": "SKU prefix (and optional name keyword) -> WooCommerce category path, parent first. First matching rule wins. Built from the nabaatstore.com categories as of 2026-10-25.",
+  "rules": [
+    { "sku": "^AC-", "path": ["Appliance Covers", "AC Covers"] },
+    { "sku": "^FC-", "name": "matty", "path": ["Appliance Covers", "Fridge Covers", "Fridge Mats"] },
+    { "sku": "^FC-", "name": "double door", "path": ["Appliance Covers", "Fridge Covers", "Double Door Fridge Covers"] },
+    { "sku": "^FC-", "name": "single door", "path": ["Appliance Covers", "Fridge Covers", "Single Door Fridge Covers"] },
+    { "sku": "^FC-", "path": ["Appliance Covers", "Fridge Covers"] },
+    { "sku": "^OC-", "path": ["Appliance Covers", "Microwave Oven Covers"] },
+    { "sku": "^MC-", "path": ["Appliance Covers", "Mixer Grinder Covers"] },
+    { "sku": "^TC-", "path": ["Appliance Covers", "Toaster Covers"] },
+    { "sku": "^CPJ-", "path": ["Appliance Covers", "Cold Press Juicer Covers"] },
+    { "sku": "^BMC-", "path": ["Appliance Covers", "Bread Maker Covers"] },
+    { "sku": "^ECC-", "path": ["Appliance Covers", "Cooker Covers"] },
+    { "sku": "^VCB?-", "path": ["Appliance Covers", "Vacuum Cleaner Covers"] },
+    { "sku": "^WMC-FL", "path": ["Appliance Covers", "Washing Machine Covers", "Front Load"] },
+    { "sku": "^WMC-TL", "path": ["Appliance Covers", "Washing Machine Covers", "Top Load"] },
+    { "sku": "^WMC-", "path": ["Appliance Covers", "Washing Machine Covers"] },
+    { "sku": "^CY(C|CL|LC)-", "path": ["Appliance Covers", "Cycle Covers & Accessories"] },
+    { "sku": "^GMB-", "path": ["Bags & Travel Gear", "Gym Bags"] },
+    { "sku": "^SB-", "path": ["Bags & Travel Gear", "Sling & Crossbody Bags"] },
+    { "sku": "^WB-", "path": ["Bags & Travel Gear", "Waist Bags & Fanny Packs"] },
+    { "sku": "^PH-", "path": ["Bags & Travel Gear", "Passport Holders"] },
+    { "sku": "^NW-", "path": ["Bags & Travel Gear", "Travel Pouches & Neck Wallets"] },
+    { "sku": "^DGF-", "path": ["Home Essentials", "Door & Window Accessories"] },
+    { "sku": "^CRPN", "path": ["Home Essentials", "Garden Netting & Plant Care"] },
+    { "sku": "^TBC-", "name": "heavy duty", "path": ["Table Covers & Protectors", "Heavy Duty Table Protectors"] },
+    { "sku": "^TBC-", "path": ["Table Covers & Protectors", "Standard Clear Table Covers"] },
+    { "sku": "", "name": "table cover", "path": ["Table Covers & Protectors", "Standard Clear Table Covers"] }
+  ]
+}

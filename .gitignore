@@ -1,0 +1,12 @@
+# Business data: kept out of this public repo
+*.xlsx
+nabaat-products-*/
+
+# Build outputs (rebuilt from the plugin folders)
+*.zip
+
+# Tool and scratch files
+.taste-skill/
+_tmp*.html
+.DS_Store
+Thumbs.db
